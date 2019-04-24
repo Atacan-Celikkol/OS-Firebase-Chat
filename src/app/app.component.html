@@ -4,9 +4,7 @@
 <div class="container" style="position: sticky; top: 0; z-index: 99; height: 0;">
   <div class="row">
     <div class="col s12 center">
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Name</a>
-      <button class="btn waves-effect waves-light" (click)="send()">Send</button>
-      <a class="btn tooltipped" data-position="bottom" data-tooltip="Click to clear chat history." (click)="clearHistory()">Clear History</a>
+
     </div>
   </div>
 </div>
@@ -46,16 +44,3 @@ overflow: auto;
   </div>
 </div>
 
-<!-- Modal Structure -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Your Name</h4>
-    <div id="inputs" class="input-field">
-      <input type="text" id="name_input" [(ngModel)]="userId">
-      <label for="name_input">Name...</label>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Save</a>
-    </div>
-  </div>
-</div>
