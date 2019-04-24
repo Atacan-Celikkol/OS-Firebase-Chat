@@ -1,6 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    // Your Firebase configuration should be here
+    apiKey: 'AIzaSyALqdpKv2uwEZUy2_vkkcp9SyFfdQrLecg',
+    authDomain: 'os-firebase-chat.firebaseapp.com',
+    databaseURL: 'https://os-firebase-chat.firebaseio.com',
+    projectId: 'os-firebase-chat',
+    storageBucket: 'os-firebase-chat.appspot.com',
+    messagingSenderId: '1009739325204'
   }
 };
