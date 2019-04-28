@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { MessageRequest, MessageResponse } from '../../core/models/message';
+import { Component } from '@angular/core';
+import { MessageRequest } from '../../core/models/message';
+import { ChatService } from '../../core/services/chat.service';
+import { ShareService } from '../../core/services/share.service';
 
 declare var M;
 
@@ -18,25 +19,20 @@ document.addEventListener('DOMContentLoaded', function () {
   templateUrl: './chat-header.component.html',
   styleUrls: ['./chat-header.component.less']
 })
-export class ChatHeaderComponent implements OnInit {
+export class ChatHeaderComponent {
 
-  dbMessages: AngularFireList<MessageResponse>;
-  messages: MessageResponse[];
-  userId = '';
-  message = '';
-  constructor(protected db: AngularFireDatabase) { }
-
-  ngOnInit() {
+  userId;
+  constructor(protected cs: ChatService, protected ss: ShareService) {
+    ss.userId.subscribe(x => this.userId = x);
   }
 
   send() {
-    const message: MessageRequest = { message: this.message, userId: this.userId };
-    this.dbMessages.push(message);
-    this.message = '';
+    const message: MessageRequest = { message: 'Test message', userId: 'Test User' };
+    this.cs.pushItem(message);
   }
 
   clearHistory() {
-    this.db.object('messages').set('');
+    this.cs.setItem(null);
   }
 
 }

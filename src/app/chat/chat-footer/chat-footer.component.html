@@ -1,3 +1,5 @@
-<p>
-  chat-footer works!
-</p>
+<div class="input-field">
+  <input type="text" id="chat_input" [(ngModel)]="message" (click)="scrollToBottom()" (keyup.enter)="message.length > 0 && send()">
+  <label for="chat_input">Message...</label>
+  <button id="chat_send" class="btn waves-effect waves-light" [disabled]="message.length === 0" (click)="send()">></button>
+</div>

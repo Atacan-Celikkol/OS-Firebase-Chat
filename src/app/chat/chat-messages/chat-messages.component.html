@@ -1,3 +1,7 @@
-<p>
-  chat-messages works!
-</p>
+<ng-container *ngFor="let item of messages">
+  <div class="row">
+    <div class="chip" [class.right]="item.userId === userId">
+      {{item.message}}
+    </div>
+  </div>
+</ng-container>

@@ -3,18 +3,16 @@
 <a class="btn tooltipped" data-position="bottom" data-tooltip="Click to clear chat history." (click)="clearHistory()">Clear History</a>
 
 
-
-
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
   <div class="modal-content">
     <h4>Your Name</h4>
     <div id="inputs" class="input-field">
-      <input type="text" id="name_input" [(ngModel)]="userId">
+      <input type="text" id="name_input" [(ngModel)]="userIdInput">
       <label for="name_input">Name...</label>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Save</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" (click)="ss.changeUserId(userIdInput)">Save</a>
     </div>
   </div>
 </div>
